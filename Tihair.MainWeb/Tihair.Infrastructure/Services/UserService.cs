@@ -10,7 +10,7 @@ using Tihair.Core.Models;
 
 namespace Tihair.Core.Repositories
 {
-    public class UserRepository(DataContext context) : IUserRepository
+    public class UserService(DataContext context) : IUserService
     {
         public async Task Create(User user)
         {
@@ -31,7 +31,7 @@ namespace Tihair.Core.Repositories
 
         public async Task<User?> Get(User user)
         {
-            return await context.Users.FirstOrDefaultAsync(u => u.Name == user.Name && u.Password == user.Password);
+            return await context.Users.FirstOrDefaultAsync(u => u.Name == user.Name && u.PasswordHash == user.PasswordHash);
         }
     }
 }

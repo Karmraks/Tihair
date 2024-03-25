@@ -4,7 +4,7 @@ namespace Tihair.MainWeb.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class HomeController : ControllerBase
+    public class MainController : Controller
     {
         [HttpGet]
         public IActionResult GetUsers()

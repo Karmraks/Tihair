@@ -1,6 +1,6 @@
 @Tihair.MainWeb_HostAddress = http://localhost:5175
 
-GET {{Tihair.MainWeb_HostAddress}}/weatherforecast/
+GET {{Tihair.MainWeb_HostAddress}}/api/Main/
 Accept: application/json
 
 ###

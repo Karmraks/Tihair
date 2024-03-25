@@ -8,7 +8,10 @@ namespace Tihair.Core.Models.Dtos
 {
     public class UserDto
     {
-        public string Name { get; set; } = null!;
-        public string Password { get; set; } = null!;
+        public Guid Id { get; set; }
+        public required string Name { get; set; }
+        public string Password { get; set; }
+
+        public required string PhoneNumber { get; set; }
     }
 }

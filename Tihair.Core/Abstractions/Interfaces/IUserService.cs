@@ -7,7 +7,7 @@ using Tihair.Core.Models;
 
 namespace Tihair.Core.Abstractions.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserService
     {
         Task<User?> Get(User user);
         Task<IEnumerable<User>> GetAll();

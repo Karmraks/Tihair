@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Tihair.Core.Abstractions.Interfaces;
 using Tihair.Core.Models.Dtos;
 using Tihair.Core.Models;
 
@@ -10,12 +6,13 @@ namespace Tihair.Core.Abstractions.Extenstions
 {
     public static class DemoExtenstion
     {
-        public static User ToEntity(this UserDto user)
+        public static User ToEntity(this UserDto user, IPasswordHasher passwordHasher)
         {
             return new User()
             {
                 Name = user.Name,
-                Password = user.Password
+                PhoneNumber = user.PhoneNumber,
+                PasswordHash = passwordHasher.Generate(user.Password)
             };
         }
 
@@ -23,8 +20,9 @@ namespace Tihair.Core.Abstractions.Extenstions
         {
             return new UserDto()
             {
+                Id = user.Id,
                 Name = user.Name,
-                Password = user.Password
+                PhoneNumber = user.PhoneNumber
             };
         }
     }
